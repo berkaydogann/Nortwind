@@ -1,6 +1,8 @@
 package com.example.northwind.business.concretes;
 
 import com.example.northwind.business.abstracts.ProductService;
+import com.example.northwind.core.utilities.result.DataResult;
+import com.example.northwind.core.utilities.result.SuccessDataResult;
 import com.example.northwind.dataAccess.abstracts.ProductRepository;
 import com.example.northwind.entities.concretes.Product;
 import lombok.AllArgsConstructor;
@@ -16,8 +18,9 @@ public class ProductManager implements ProductService {
     private ProductRepository productRepository;
 
     @Override
-    public List<Product> getAll() {
+    public DataResult<List<Product>> getAll() {
+        
+        return new SuccessDataResult<>(this.productRepository.findAll(), "Data listelendi.");
 
-        return this.productRepository.findAll();
     }
 }
