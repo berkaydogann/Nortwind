@@ -1,6 +1,5 @@
 package com.example.northwind;
 
-import com.google.common.base.Predicate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

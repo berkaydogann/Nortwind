@@ -43,20 +43,20 @@ public class ProductManager implements ProductService {
     @Override
     public DataResult<Product> getByProductNameAndCategoryId(String productName, int categoryId) {
         return new SuccessDataResult<Product>
-                (this.productRepository.getByProductNameAndCategoryId(productName, categoryId), "Data listelendi.");
+                (this.productRepository.getByProductNameAndCategory(productName, categoryId), "Data listelendi.");
     }
 
     @Override
     public DataResult<List<Product>> getByProductNameOrCategoryId(String productName, int categoryId) {
         return new SuccessDataResult<List<Product>>
-                (this.productRepository.getByProductNameOrCategoryId(productName, categoryId), "Data listelendi.");
+                (this.productRepository.getByProductNameOrCategory(productName, categoryId), "Data listelendi.");
 
     }
 
     @Override
     public DataResult<List<Product>> getByCategoryIdIn(List<Integer> categories) {
         return new SuccessDataResult<List<Product>>
-                (this.productRepository.getByCategoryIdIn(categories), "Data listelendi.");
+                (this.productRepository.getByCategoryIn(categories), "Data listelendi.");
 
     }
 
