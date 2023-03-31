@@ -26,13 +26,13 @@ public class ProductManager implements ProductService {
     @Override
     public DataResult<List<Product>> getAll() {
 
-        return new SuccessDataResult<List<Product>>(this.productRepository.findAll(), "Data listelendi.");
+        return new SuccessDataResult<List<Product>>(this.productRepository.findAll(), "Data listed.");
 
     }
 
     @Override
     public DataResult<List<Product>> getAllSorted() {
-        Sort sort = Sort.by(Sort.Direction.ASC,"productName");
+        Sort sort = Sort.by(Sort.Direction.ASC, "productName");
 
         return new SuccessDataResult<List<Product>>(this.productRepository.findAll(sort));
     }
@@ -51,45 +51,45 @@ public class ProductManager implements ProductService {
 
     @Override
     public DataResult<Product> getByProductName(String productName) {
-        return new SuccessDataResult<Product>(this.productRepository.getByProductName(productName), "Data listelendi.");
+        return new SuccessDataResult<Product>(this.productRepository.getByProductName(productName), "Data listed.");
 
     }
 
     @Override
     public DataResult<Product> getByProductNameAndCategory_CategoryId(String productName, int categoryId) {
-        return new SuccessDataResult<Product>(this.productRepository.getByProductNameAndCategory_CategoryId(productName, categoryId), "Data listelendi.");
+        return new SuccessDataResult<Product>(this.productRepository.getByProductNameAndCategory_CategoryId(productName, categoryId), "Data listed.");
     }
 
     @Override
     public DataResult<List<Product>> getByProductNameOrCategory_CategoryId(String productName, int categoryId) {
-        return new SuccessDataResult<List<Product>>(this.productRepository.getByProductNameOrCategory_CategoryId(productName, categoryId), "Data listelendi.");
+        return new SuccessDataResult<List<Product>>(this.productRepository.getByProductNameOrCategory_CategoryId(productName, categoryId), "Data listed.");
 
     }
 
     @Override
     public DataResult<List<Product>> getByCategory_CategoryIdIn(List<Integer> categories) {
-        return new SuccessDataResult<List<Product>>(this.productRepository.getByCategory_CategoryIdIn(categories), "Data listelendi.");
+        return new SuccessDataResult<List<Product>>(this.productRepository.getByCategory_CategoryIdIn(categories), "Data listed.");
 
     }
 
     @Override
     public DataResult<List<Product>> getByProductNameContains(String productName) {
-        return new SuccessDataResult<List<Product>>(this.productRepository.getByProductNameContains(productName), "Data listelendi.");
+        return new SuccessDataResult<List<Product>>(this.productRepository.getByProductNameContains(productName), "Data listed.");
     }
 
     @Override
     public DataResult<List<Product>> getByProductNameStartsWith(String productName) {
-        return new SuccessDataResult<List<Product>>(this.productRepository.getByProductNameStartsWith(productName), "Data listelendi.");
+        return new SuccessDataResult<List<Product>>(this.productRepository.getByProductNameStartsWith(productName), "Data listed.");
 
     }
 
     @Override
     public DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId) {
-        return new SuccessDataResult<List<Product>>(this.productRepository.getByNameAndCategory(productName, categoryId), "Data listelendi.");
+        return new SuccessDataResult<List<Product>>(this.productRepository.getByNameAndCategory(productName, categoryId), "Data listed.");
     }
 
     @Override
     public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
-        return new SuccessDataResult<List<ProductWithCategoryDto>>(this.productRepository.getProductWithCategoryDetails(),"Data Listelendi");
+        return new SuccessDataResult<List<ProductWithCategoryDto>>(this.productRepository.getProductWithCategoryDetails(), "Data Listelendi");
     }
 }
