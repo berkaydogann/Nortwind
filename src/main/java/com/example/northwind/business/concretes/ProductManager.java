@@ -7,6 +7,7 @@ import com.example.northwind.core.utilities.result.SuccessDataResult;
 import com.example.northwind.core.utilities.result.SuccessResult;
 import com.example.northwind.dataAccess.abstracts.ProductRepository;
 import com.example.northwind.entities.concretes.Product;
+import com.example.northwind.entities.dtos.ProductWithCategoryDto;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -85,5 +86,10 @@ public class ProductManager implements ProductService {
     @Override
     public DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId) {
         return new SuccessDataResult<List<Product>>(this.productRepository.getByNameAndCategory(productName, categoryId), "Data listelendi.");
+    }
+
+    @Override
+    public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+        return new SuccessDataResult<List<ProductWithCategoryDto>>(this.productRepository.getProductWithCategoryDetails(),"Data Listelendi");
     }
 }

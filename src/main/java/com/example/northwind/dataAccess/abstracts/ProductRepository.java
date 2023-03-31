@@ -23,6 +23,8 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     @Query("From Product where productName=:productName and category.categoryId=:categoryId")
     List<Product> getByNameAndCategory(String productName, int categoryId);
 
+    //select p.product_id, p.product_name, c.category_name from categories c inner join products p
+    //on c.category_id = p.category_id
     @Query("Select new com.example.northwind.entities.dtos.ProductWithCategoryDto(p.id, p.productName, c.categoryName) From Category c inner join c.products p")
     List<ProductWithCategoryDto> getProductWithCategoryDetails();
 }
